@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>olive.ai</title>
+<style>
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3e8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+  /* Pulsate animation for the chat container */
+@keyframes containerPulse {
+    0%, 100% {
+     transform: scale(1);
+    box-shadow: 0 8px 24px rgba(109,35,153,0.3);
+    }
+    50% {
+    transform: scale(1.05);
+    box-shadow: 0 12px 32px rgba(109,35,153,0.6);
+    }
+}
+
+.chat-container {
+    width: 450px;
+    height: 600px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(109,35,153,0.3);
+    display: flex;
+    flex-direction: column;
+
+    /* Apply pulsating animation */
+    animation: containerPulse 3s ease-in-out infinite;
+}
+
+#chatHeader {
+    background: #6D2399;
+    color: white;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 22px;
+    border-radius: 20px 20px 0 0;
+    text-align: center;
+}
+
+#chatMessages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background: #f7f1ff;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message {
+    max-width: 75%;
+    padding: 12px 18px;
+    border-radius: 20px;
+}
+
+.user {
+    background-color: #e8f5e9;
+    align-self: flex-end;
+    text-align: right;
+    color: #333;
+}
+
+.bot {
+    background-color: #BF87E0;
+    align-self: flex-start;
+    color: white;
+}
+
+#chatInputArea {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #ddd;
+    gap: 10px;
+}
+
+#chatInput {
+    flex: 1;
+    padding: 12px 15px;
+    font-size: 16px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+}
+
+#sendMsgBtn {
+    background: #6D2399;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 12px 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#sendMsgBtn:hover {
+    background: #572175;
+}
+
+
+    
+
+    
+</style>
+</head>
+<body>
+
+
+<div class="chat-container" role="main" aria-label="Chat with Olive AI">
+  <div id="chatHeader">olive.ai</div>
+  <div id="chatMessages" aria-live="polite" aria-relevant="additions"></div>
+  <div id="chatInputArea">
+    <input type="text" id="chatInput" placeholder="Ask about your animals..." aria-label="Chat input" />
+    <button id="sendMsgBtn" aria-label="Send message">Send</button>
+  </div>
+</div>
+
+<script>
+  const chatMessages = document.getElementById('chatMessages');
+  const chatInput = document.getElementById('chatInput');
+  const sendMsgBtn = document.getElementById('sendMsgBtn');
+
+  sendMsgBtn.addEventListener('click', sendMessage);
+  chatInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') sendMessage();
+  });
+
+  function sendMessage() {
+    const text = chatInput.value.trim();
+    if (!text) return;
+
+    appendMessage(text, 'user');
+    chatInput.value = '';
+    chatInput.focus();
+
+    setTimeout(() => {
+      appendMessage(getBotResponse(text), 'bot');
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }, 700);
+
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  function appendMessage(text, sender) {
+    const msgDiv = document.createElement('div');
+    msgDiv.className = 'message ' + sender;
+    msgDiv.textContent = text;
+    chatMessages.appendChild(msgDiv);
+  }
+
+  function getBotResponse(input) {
+    if (input.toLowerCase().includes("tag #a102")) {
+      return "Tag #A102 is doing great! Normal temperature and active 🐄";
+    }
+    return "Hmm... I'm still learning. Can you ask about a tag?";
+  }
+</script>
+
+</body>
+</html>
+
