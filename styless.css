@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #fcfbff;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    margin: 0;
+  }
+  
+  .container {
+    background: white;
+    padding: 24px 32px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 22px;
+    color: #222;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  thead th {
+    text-align: left;
+    padding: 12px 8px;
+    color: #555;
+    border-bottom: 2px solid #eee;
+    font-size: 14px;
+  }
+  
+  tbody td {
+    padding: 14px 8px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .tag {
+    display: flex;
+    align-items: center;
+  }
+  
+  .bar {
+    width: 5px;
+    height: 28px;
+    border-radius: 2px;
+    margin-right: 10px;
+  }
+  
+  .bar.green {
+    background-color: #34c759;
+  }
+  
+  .bar.orange {
+    background-color: #ff9500;
+  }
+  
+  .bar.red {
+    background-color: #ff3b30;
+  }
+  
+  .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  
+  .dot.green {
+    background-color: #34c759;
+  }
+  
+  .dot.orange {
+    background-color: #ff9500;
+  }
+  
+  .dot.red {
+    background-color: #ff3b30;
+  }
+  
+  .timestamp {
+    text-align: right;
+    font-size: 12px;
+    color: #999;
+    margin-top: 14px;
+  }
+  
+  .question-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+    gap: 8px;
+  }
+  
+  .question-box input {
+    padding: 10px 14px;
+    font-size: 14px;
+    width: 60%;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: border 0.3s ease;
+  }
+  
+  .question-box input:focus {
+    border-color: #888;
+  }
+  
+  .question-box button {
+    padding: 10px 16px;
+    font-size: 14px;
+    background-color: #87338a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .question-box button:hover {
+    background-color: #87338a;
+  }
+  

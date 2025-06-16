@@ -1,0 +1,15 @@
+{
+    "A220": {
+      "temperature": "38.9°C",
+      "weight": "420kg",
+      "activity": "75%",
+      "lastCheck": "2025-06-16"
+    },
+    "135": {
+      "temperature": "39.1°C",
+      "weight": "395kg",
+      "activity": "80%",
+      "lastCheck": "2025-06-15"
+    }
+  }
+  

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Livestock Health Overview</title>
+  <link rel="stylesheet" href="styless.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Livestock Health Overview</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Tag Number</th>
+          <th>Temperature (°C)</th>
+          <th>Health Status</th>
+          <th>Activity Level</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="tag"><span class="bar green"></span>#A102</div></td>
+          <td>38.6</td>
+          <td><span class="dot green"></span>Healthy</td>
+          <td>Active</td>
+        </tr>
+        <tr>
+          <td><div class="tag"><span class="bar orange"></span>#B305</div></td>
+          <td>39.8</td>
+          <td><span class="dot orange"></span>Monitor</td>
+          <td>Less Active</td>
+        </tr>
+        <tr>
+          <td><div class="tag"><span class="bar red"></span>#C210</div></td>
+          <td>41.0</td>
+          <td><span class="dot red"></span>Alert</td>
+          <td>Inactive</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="timestamp">5 mins ago</p>
+    <div class="question-box">
+      <input type="text" placeholder="Ask me specific information..." />
+      <button>Ask</button>
+    </div>
+  </div>
+
+
+</body>
+</html>
